@@ -1,0 +1,31 @@
+{
+  "plugins": ["import", "prettier", "standard"],
+  "extends": ["standard", "prettier"],
+  "root": true,
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
+  "rules": {
+    "standard/no-callback-literal": 0, // enable after error handing refactor
+    "node/exports-style": ["error", "module.exports"],
+    "new-cap": 0,
+    "no-console": "off",
+    "complexity": ["error", 20]
+  },
+  "globals": {
+    "angular": true,
+    "define": true,
+    "requirejs": true,
+    "MG": true,
+    "Snackbar": true,
+    "ROLES": true,
+    "io": true,
+    "d3": true
+  }
+}

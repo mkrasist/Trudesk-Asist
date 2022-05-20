@@ -3,12 +3,12 @@
 ## Deploy the manifests
 
 ### Create namespace
-<code> kubectl create ns trudesk </code>
+<code> kubectl create ns trudesk-asist </code>
 
 ### Apply manifests
 <code> kubectl apply -f .  </code>
 
-**You need to define your own ingress or expose the service to access trudesk!!!**
+**You need to define your own ingress or expose the service to access trudesk-asist!!!**
 
 
 Wait some seconds until the deployment is completed.
@@ -16,7 +16,7 @@ Wait some seconds until the deployment is completed.
 ## Configure Elastic
 Log into TrueDesk and go to Settings > Elasticsearch and define the enpoint of the elastic service
 
-- Server: http://elasticsearch.trudesk.svc.cluster.local
+- Server: http://elasticsearch.trudesk-asist.svc.cluster.local
 - Port: 9200 
 
 

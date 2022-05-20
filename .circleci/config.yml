@@ -6,7 +6,7 @@ executors:
   docker-executor:
     docker:
       - image: circleci/node:16-stretch
-    working_directory: ~/trudesk
+    working_directory: ~/trudesk-asist
 
 commands:
   yarninstall:
@@ -29,7 +29,7 @@ jobs:
     docker:
     - image: circleci/node:16-stretch
     - image: circleci/mongo:5.0
-    working_directory: ~/trudesk
+    working_directory: ~/trudesk-asist
     steps:
     - checkout
     - yarninstall
@@ -47,17 +47,17 @@ jobs:
       - run:
           name: Build Docker Image
           command: |
-            docker build -t polonel/trudesk:next .
+            docker build -t polonel/trudesk-asist:next .
       - run:
           name: Push Docker Image (next)
           command: |
             echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
-            docker push polonel/trudesk:next
+            docker push polonel/trudesk-asist:next
   build_develop:
     docker:
     - image: circleci/node:16-stretch
     - image: circleci/mongo:5.0
-    working_directory: ~/trudesk
+    working_directory: ~/trudesk-asist
     resource_class: medium+
     steps:
     - checkout
@@ -79,7 +79,7 @@ jobs:
     docker:
     - image: circleci/node:16-stretch
     - image: circleci/mongo:5.0
-    working_directory: ~/trudesk
+    working_directory: ~/trudesk-asist
     resource_class: large
     steps:
     - checkout

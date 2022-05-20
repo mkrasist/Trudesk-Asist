@@ -6,8 +6,8 @@ metadata:
     kompose.version: 1.26.1 (a9d05d509)
   creationTimestamp: null
   labels:
-    io.kompose.service: trudesk
-  name: trudesk
+    io.kompose.service: trudesk-asist
+  name: trudesk-asist
   namespace: default
 spec:
   ports:
@@ -15,6 +15,6 @@ spec:
       port: 8118
       targetPort: 8118
   selector:
-    io.kompose.service: trudesk
+    io.kompose.service: trudesk-asist
 status:
   loadBalancer: {}
